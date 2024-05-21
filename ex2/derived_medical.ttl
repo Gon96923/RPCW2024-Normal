@@ -1,0 +1,187 @@
+@prefix : <http://www.example.org/disease-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@base <http://www.example.org/disease-ontology#> .
+
+<http://www.example.org/disease-ontology> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.example.org/disease-ontology#name
+:name rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.example.org/disease-ontology#exhibitsSymptom
+:exhibitsSymptom rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Patient ;
+                 rdfs:range :Symptom .
+
+
+###  http://www.example.org/disease-ontology#hasDisease
+:hasDisease rdf:type owl:ObjectProperty ;
+            rdfs:domain :Patient ;
+            rdfs:range :Disease .
+
+
+###  http://www.example.org/disease-ontology#hasSymptom
+:hasSymptom rdf:type owl:ObjectProperty ;
+            rdfs:domain :Disease ;
+            rdfs:range :Symptom .
+
+
+###  http://www.example.org/disease-ontology#hasTreatment
+:hasTreatment rdf:type owl:ObjectProperty ;
+              rdfs:domain :Disease ;
+              rdfs:range :Treatment .
+
+
+###  http://www.example.org/disease-ontology#receivesTreatment
+:receivesTreatment rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Patient ;
+                   rdfs:range :Treatment .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.example.org/disease-ontology#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.example.org/disease-ontology#Disease
+:Disease rdf:type owl:Class .
+
+
+###  http://www.example.org/disease-ontology#Patient
+:Patient rdf:type owl:Class .
+
+
+###  http://www.example.org/disease-ontology#Symptom
+:Symptom rdf:type owl:Class .
+
+
+###  http://www.example.org/disease-ontology#Treatment
+:Treatment rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.example.org/disease-ontology#AntiviralDrugs
+:AntiviralDrugs rdf:type owl:NamedIndividual ,
+                         :Treatment .
+
+
+###  http://www.example.org/disease-ontology#Cough
+:Cough rdf:type owl:NamedIndividual ,
+                :Symptom .
+
+
+###  http://www.example.org/disease-ontology#Diabetes
+:Diabetes rdf:type owl:NamedIndividual ,
+                   :Disease ;
+          :hasSymptom :Fatigue ,
+                      :FrequentUrination ,
+                      :IncreasedThirst ;
+          :hasTreatment :DietModification ,
+                        :Exercise ,
+                        :InsulinTherapy .
+
+
+###  http://www.example.org/disease-ontology#DietModification
+:DietModification rdf:type owl:NamedIndividual ,
+                           :Treatment .
+
+
+###  http://www.example.org/disease-ontology#Exercise
+:Exercise rdf:type owl:NamedIndividual ,
+                   :Treatment .
+
+
+###  http://www.example.org/disease-ontology#Fatigue
+:Fatigue rdf:type owl:NamedIndividual ,
+                  :Symptom .
+
+
+###  http://www.example.org/disease-ontology#Fever
+:Fever rdf:type owl:NamedIndividual ,
+                :Symptom .
+
+
+###  http://www.example.org/disease-ontology#Flu
+:Flu rdf:type owl:NamedIndividual ,
+              :Disease ;
+     :hasSymptom :Cough ,
+                 :Fever ,
+                 :SoreThroat ;
+     :hasTreatment :AntiviralDrugs ,
+                   :Hydration ,
+                   :Rest .
+
+
+###  http://www.example.org/disease-ontology#FrequentUrination
+:FrequentUrination rdf:type owl:NamedIndividual ,
+                            :Symptom .
+
+
+###  http://www.example.org/disease-ontology#Hydration
+:Hydration rdf:type owl:NamedIndividual ,
+                    :Treatment .
+
+
+###  http://www.example.org/disease-ontology#IncreasedThirst
+:IncreasedThirst rdf:type owl:NamedIndividual ,
+                          :Symptom .
+
+
+###  http://www.example.org/disease-ontology#InsulinTherapy
+:InsulinTherapy rdf:type owl:NamedIndividual ,
+                         :Treatment .
+
+
+###  http://www.example.org/disease-ontology#Patient1
+:Patient1 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :exhibitsSymptom :Cough ,
+                           :Fever ,
+                           :SoreThroat ;
+          :name "Paul Harrods" .
+
+
+###  http://www.example.org/disease-ontology#Patient2
+:Patient2 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :exhibitsSymptom :Fatigue ,
+                           :FrequentUrination ,
+                           :IncreasedThirst ;
+          :name "Ana Montana" .
+
+
+###  http://www.example.org/disease-ontology#Rest
+:Rest rdf:type owl:NamedIndividual ,
+               :Treatment .
+
+
+###  http://www.example.org/disease-ontology#SoreThroat
+:SoreThroat rdf:type owl:NamedIndividual ,
+                     :Symptom .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

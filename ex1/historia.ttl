@@ -1,0 +1,220 @@
+@prefix : <http://www.semanticweb.org/gvale/ontologies/2024/4/historia/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/gvale/ontologies/2024/4/historia/> .
+
+<http://www.semanticweb.org/gvale/ontologies/2024/4/historia> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#contrataTrabalhador
+:contrataTrabalhador rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Agricultor ;
+                     rdfs:range :Trabalhador .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#criaAnimal
+:criaAnimal rdf:type owl:ObjectProperty ;
+            rdfs:domain :Agricultor ;
+            rdfs:range :Animal .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#cultivaFruta
+:cultivaFruta rdf:type owl:ObjectProperty ;
+              rdfs:domain :Agricultor ;
+              rdfs:range :Fruta .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#fazGeleia
+:fazGeleia rdf:type owl:ObjectProperty ;
+           rdfs:domain :Agricultor ;
+           rdfs:range :Fruta .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#fazendaDe
+:fazendaDe rdf:type owl:ObjectProperty ;
+           owl:inverseOf :viveNaFazenda .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#filhoDe
+:filhoDe rdf:type owl:ObjectProperty ;
+         owl:inverseOf :progenitorDe ;
+         rdfs:domain :Criança ;
+         rdfs:range :Agricultor .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#plantaVegetal
+:plantaVegetal rdf:type owl:ObjectProperty ;
+               rdfs:domain :Agricultor ;
+               rdfs:range :Vegetal .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#progenitorDe
+:progenitorDe rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#trocaProdutos
+:trocaProdutos rdf:type owl:ObjectProperty ;
+               rdfs:domain :Agricultor ;
+               rdfs:range :Agricultor .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#viveNaFazenda
+:viveNaFazenda rdf:type owl:ObjectProperty ;
+               rdfs:domain :Agricultor ;
+               rdfs:range :Fazenda .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#nomeAgricultor
+:nomeAgricultor rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#parceiroAgricultor
+:parceiroAgricultor rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Agricultor
+:Agricultor rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Animal
+:Animal rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Criança
+:Criança rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Fazenda
+:Fazenda rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Fruta
+:Fruta rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Trabalhador
+:Trabalhador rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Vegetal
+:Vegetal rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Alface
+:Alface rdf:type owl:NamedIndividual ,
+                 :Vegetal .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Ana
+:Ana rdf:type owl:NamedIndividual ,
+              :Criança ;
+     :filhoDe :Sr._João .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Banana
+:Banana rdf:type owl:NamedIndividual ,
+                 :Fruta .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Cenoura
+:Cenoura rdf:type owl:NamedIndividual ,
+                  :Vegetal .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#FazendaA
+:FazendaA rdf:type owl:NamedIndividual ,
+                   :Fazenda ;
+          :fazendaDe :Sr._João .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#FazendaB
+:FazendaB rdf:type owl:NamedIndividual ,
+                   :Fazenda ;
+          :fazendaDe :Sr._Carlos .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Galinha
+:Galinha rdf:type owl:NamedIndividual ,
+                  :Animal .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Laranja
+:Laranja rdf:type owl:NamedIndividual ,
+                  :Fruta .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Maçã
+:Maçã rdf:type owl:NamedIndividual ,
+               :Fruta .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Pedro
+:Pedro rdf:type owl:NamedIndividual ,
+                :Criança ;
+       :filhoDe :Sr._João .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Porco
+:Porco rdf:type owl:NamedIndividual ,
+                :Animal .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Sr._Carlos
+:Sr._Carlos rdf:type owl:NamedIndividual ,
+                     :Agricultor ;
+            :plantaVegetal :Alface ,
+                           :Cenoura ,
+                           :Tomate ;
+            :trocaProdutos :Sr._João ;
+            :nomeAgricultor "Sr. Carlos" .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Sr._João
+:Sr._João rdf:type owl:NamedIndividual ,
+                   :Agricultor ;
+          :contrataTrabalhador :TrabalhadorA ;
+          :criaAnimal :Galinha ,
+                      :Porco ,
+                      :Vaca ;
+          :cultivaFruta :Banana ,
+                        :Laranja ,
+                        :Maçã ;
+          :nomeAgricultor "Sr. João" ;
+          :parceiroAgricultor "Sra. Maria" .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Tomate
+:Tomate rdf:type owl:NamedIndividual ,
+                 :Vegetal .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#TrabalhadorA
+:TrabalhadorA rdf:type owl:NamedIndividual ,
+                       :Trabalhador .
+
+
+###  http://www.semanticweb.org/gvale/ontologies/2024/4/historia#Vaca
+:Vaca rdf:type owl:NamedIndividual ,
+               :Animal .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

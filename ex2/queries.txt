@@ -1,1 +1,43 @@
+Ex10 ###################
+Ex10.1 ###################
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select (count(distinct ?s) as ?count) where {
+    ?s a :Disease .
+}
 
+Ex10.2 ###################
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select ?s where {
+    ?s a :Disease .
+    ?s :hasSymptom :yellowish_skin .
+}
+
+Ex10.3 ###################
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select ?s where {
+    ?s a :Disease .
+    ?s :hasTreatment :exercise .
+}
+
+Ex10.4 ###################
+
+
+
+
+Ex11 ###################
+
+
+
+Ex12 ###################
+
+
+
+Ex13 ###################
+
+
+
+Ex14 ###################
+
+
+
+Ex15 ###################

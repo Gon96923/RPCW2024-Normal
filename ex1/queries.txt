@@ -2,13 +2,16 @@ Query 1 ##########################
 
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 select (count(distinct ?s) as ?count) where {
-    ?s a owl:Class
- .
+    ?s a owl:Class .
 }
 
 
 Query 2 ##########################
 
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select (count(distinct ?s) as ?count) where {
+    ?s a owl:ObjectProperty.
+}
 
 Query 3 ##########################
 

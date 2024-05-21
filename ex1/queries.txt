@@ -1,5 +1,6 @@
 Query 1 ##########################
 
+PREFIX : <http://www.semanticweb.org/gvale/ontologies/2024/4/historia/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 select (count(distinct ?s) as ?count) where {
     ?s a owl:Class .
@@ -8,6 +9,7 @@ select (count(distinct ?s) as ?count) where {
 
 Query 2 ##########################
 
+PREFIX : <http://www.semanticweb.org/gvale/ontologies/2024/4/historia/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 select (count(distinct ?s) as ?count) where {
     ?s a owl:ObjectProperty.
@@ -15,6 +17,7 @@ select (count(distinct ?s) as ?count) where {
 
 Query 3 ##########################
 
+PREFIX : <http://www.semanticweb.org/gvale/ontologies/2024/4/historia/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 select (count(distinct ?s) as ?count) where {
     ?s a owl:NamedIndividual.
@@ -22,5 +25,11 @@ select (count(distinct ?s) as ?count) where {
 
 Query 4 ##########################
 
+PREFIX : <http://www.semanticweb.org/gvale/ontologies/2024/4/historia/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select ?s where {
+    ?s a :Agricultor.
+    ?s :plantaVegetal :Tomate.
+}
 
 Query 5 ##########################

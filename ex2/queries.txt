@@ -47,7 +47,16 @@ Ex13 ###################
 
 
 Ex14 ###################
-
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select ?syn (count(distinct ?s) as ?count) where {
+    ?d a :Disease .
+    ?d :hasSymptom ?syn.
+}
 
 
 Ex15 ###################
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select ?t (count(distinct ?s) as ?count) where {
+    ?d a :Disease .
+    ?d :hasTreatment ?t.
+}

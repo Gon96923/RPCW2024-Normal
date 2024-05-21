@@ -45,7 +45,6 @@ select ?d (count(distinct ?s) as ?count) where {
 Ex13 ###################
 
 
-
 Ex14 ###################
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 select ?syn (count(distinct ?s) as ?count) where {

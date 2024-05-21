@@ -20,7 +20,11 @@ select ?s where {
 }
 
 Ex10.4 ###################
-
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select ?name where {
+    ?s a :Patient .
+    ?s :name ?name .
+} order by ?name
 
 
 
@@ -29,7 +33,13 @@ Ex11 ###################
 
 
 Ex12 ###################
-
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select ?d (count(distinct ?s) as ?count) where {
+    ?d a :Disease .
+    ?d :hasSymptom ?syn.
+    ?s a :Patient .
+    ?s :exhibitsSymptom ?syn .
+}
 
 
 Ex13 ###################

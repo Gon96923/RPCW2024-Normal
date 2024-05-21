@@ -33,3 +33,10 @@ select ?s where {
 }
 
 Query 5 ##########################
+
+PREFIX : <http://www.semanticweb.org/gvale/ontologies/2024/4/historia/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select ?s where {
+    ?s a :Agricultor.
+    ?s :contrataTrabalhador ?b.
+}
